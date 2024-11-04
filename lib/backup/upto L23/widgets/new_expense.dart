@@ -3,6 +3,7 @@ import 'package:expense_tracker/models/expense.dart';
 
 class NewExpense extends StatefulWidget {
   const NewExpense({super.key, required this.onAddExpense});
+
   final void Function(Expense expense) onAddExpense;
 
   @override
@@ -63,6 +64,7 @@ class _NewExpenseState extends State<NewExpense> {
         category: _selectedCategory));
     Navigator.pop(context);
   }
+
   @override
   void dispose() {
     _titleController.dispose();
@@ -73,7 +75,7 @@ class _NewExpenseState extends State<NewExpense> {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: const EdgeInsets.fromLTRB(16, 48, 16, 16),
+      padding: const EdgeInsets.all(16),
       child: Column(
         children: [
           TextField(
